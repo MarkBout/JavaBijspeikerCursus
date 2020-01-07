@@ -10,8 +10,18 @@ public class Opdracht4 {
     private static String weekdagStr;
 
     public static void main(String[] args) {
+        System.out.println("welke weekdag is het nu?");
+        weekdag = invoer.nextInt();
+        checkWeekdag();
 
+        System.out.println("Het is nu " + weekdagStr);
 
+        System.out.println("En van hoeveel dagen in de toekomst wil je de weekdag berekenen?");
+        userinput = invoer.nextInt();
+        nieuweWeekdag = userinput + weekdag;
+        checkNieuweWeekdag();
+
+        System.out.println("Over " + userinput + " dagen " + weekdagStr);
     }
 
     private static void checkWeekdag() {

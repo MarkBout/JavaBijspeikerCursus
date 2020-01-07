@@ -1,36 +1,17 @@
 package H02;
-import java.awt.*;
-import java.applet.*;
-import java.awt.event.*;
+import java.util.Locale;
+import java.util.Scanner;
 
-public class Opdracht1 extends Applet {
-    TextField invoer;
-    double km, userinput, uitkomst;
-    String message;
+public class Opdracht1 {
+    private static Scanner invoer = new Scanner(System.in).useLocale(Locale.US);
+    private static double mijl;
+    private static double km;
 
-    public void init() {
-        setSize(600, 600);
-        invoer = new TextField(10);
-        invoer.addActionListener(new Conversie());
-        add(invoer);
-        //1 mijl is 1.6km
-        km = 1.6;
-        userinput = 0;
-        uitkomst = 0;
-        message = "Voer een afstand in mijlen in en druk op enter om deze naar km te berekenen";
+    public static void main(String[] args) {
+        System.out.print("Voer het aantal mijlen in: ");
+        mijl = invoer.nextDouble();
+        km = mijl * 1.6;
 
-    }
-
-    public void paint(Graphics g) {
-        g.drawString(message, 20, 50);
-    }
-
-    public class Conversie implements ActionListener{
-        public void actionPerformed(ActionEvent e) {
-        userinput = Double.parseDouble(invoer.getText());
-        uitkomst = (userinput * km);
-        message = userinput + " Mijl is " + uitkomst + " Kilometer";
-        repaint();
-        }
+        System.out.println(mijl + " mijlen is " + km + " kilometer");
     }
 }
