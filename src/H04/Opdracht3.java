@@ -7,7 +7,7 @@ public class Opdracht3 {
 
     public static void main(String[] args) {
         System.out.print("Van welk karakter wil je weten of het een klinker of medeklinker is? ");
-        char userinput = invoer.nextLine().charAt(0);
+        char userinput = invoer.nextLine().toLowerCase().charAt(0);
         if (!Character.isLetter(userinput)){
             System.out.println("Het ingevoerde character was geen letter alleen letters invoeren");
             System.exit(0);
@@ -23,7 +23,7 @@ public class Opdracht3 {
         if (controleren){
             System.out.println("De " + userinput + " is een klinker");
         }else {
-            System.out.println("De " + userinput + " is geen klinker");
+            System.out.println("De " + userinput + " is een medeklinker");
         }
     }
 }
